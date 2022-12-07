@@ -16,6 +16,8 @@
 		FCC28495293DAFD20064F7A5 /* BearHubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC28494293DAFD20064F7A5 /* BearHubUITestsLaunchTests.swift */; };
 		FCC284A2293DE40C0064F7A5 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC284A1293DE40C0064F7A5 /* CustomCell.swift */; };
 		FCC284A4293ED3860064F7A5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC284A3293ED3860064F7A5 /* ProfileView.swift */; };
+		FCC284AC294157320064F7A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC284AB294157320064F7A5 /* ContentView.swift */; };
+		FCC284AE294157620064F7A5 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC284AD294157620064F7A5 /* LikeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		FCC28494293DAFD20064F7A5 /* BearHubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearHubUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FCC284A1293DE40C0064F7A5 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		FCC284A3293ED3860064F7A5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		FCC284AB294157320064F7A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FCC284AD294157620064F7A5 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				FCC2847D293DAFD20064F7A5 /* Preview Content */,
 				FCC284A1293DE40C0064F7A5 /* CustomCell.swift */,
 				FCC284A3293ED3860064F7A5 /* ProfileView.swift */,
+				FCC284AB294157320064F7A5 /* ContentView.swift */,
+				FCC284AD294157620064F7A5 /* LikeButton.swift */,
 			);
 			path = BearHub;
 			sourceTree = "<group>";
@@ -264,8 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCC2847A293DAFD00064F7A5 /* MainView.swift in Sources */,
+				FCC284AC294157320064F7A5 /* ContentView.swift in Sources */,
 				FCC284A4293ED3860064F7A5 /* ProfileView.swift in Sources */,
 				FCC284A2293DE40C0064F7A5 /* CustomCell.swift in Sources */,
+				FCC284AE294157620064F7A5 /* LikeButton.swift in Sources */,
 				FCC28478293DAFD00064F7A5 /* BearHubApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
