@@ -25,16 +25,16 @@ struct MainView: View {
     
     var clothes_list = [
         Items(imageName: "sweatshirt", itemName: "Sweatshirts", price: 20),
-        Items(imageName: "Sweatpants", itemName: "Sweatpants", price: 25),
-        Items(imageName: "Jackets", itemName: "Jackets", price: 40)
+        Items(imageName: "sweatpant", itemName: "Sweatpants", price: 25),
+        Items(imageName: "jacket", itemName: "Jackets", price: 40)
     ]
     var transport_list = [
         Items(imageName: "scooter", itemName: "scooter", price: 200),
         Items(imageName: "skateboard", itemName: "skateboard", price: 200)
     ]
     var textbooks_list = [
-        Items(imageName: "Calculus", itemName: "Calculus: Early Transcendentals", price: 20),
-        Items(imageName: "Statistics", itemName: "Introductory Statistics", price: 15),
+        Items(imageName: "textbook", itemName: "Calculus: Early Transcendentals", price: 20),
+        Items(imageName: "textbook2", itemName: "Introductory Statistics", price: 15),
     ]
     var furniture_list = [
         Items(imageName: "armchair", itemName: "IKEA Armchair", price: 20),
@@ -92,8 +92,8 @@ struct MainView: View {
     }
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MainView()
-//    }
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
+    }
+}
