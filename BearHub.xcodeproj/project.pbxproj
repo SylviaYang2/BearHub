@@ -105,11 +105,11 @@
 				FCC28477293DAFD00064F7A5 /* BearHubApp.swift */,
 				FCC28479293DAFD00064F7A5 /* MainView.swift */,
 				FCC2847B293DAFD20064F7A5 /* Assets.xcassets */,
-				FCC2847D293DAFD20064F7A5 /* Preview Content */,
 				FCC284A1293DE40C0064F7A5 /* CustomCell.swift */,
 				FCC284A3293ED3860064F7A5 /* ProfileView.swift */,
 				FCC284AB294157320064F7A5 /* ContentView.swift */,
 				FCC284AD294157620064F7A5 /* LikeButton.swift */,
+				FCC2847D293DAFD20064F7A5 /* Preview Content */,
 			);
 			path = BearHub;
 			sourceTree = "<group>";

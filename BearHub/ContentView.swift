@@ -42,7 +42,7 @@ struct ContentView: View {
             
             VStack(alignment: .leading) {
                 HStack {
-                    Image(imageName)
+                    Image("Carol")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 120, height: 120)
