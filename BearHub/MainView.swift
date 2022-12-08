@@ -8,9 +8,9 @@
 import SwiftUI
 
 class Items: Identifiable {
-    let imageName: String
-    let itemName: String
-    let price: Int
+    var imageName: String
+    var itemName: String
+    var price: Int
     
     
     init(imageName: String, itemName: String, price: Int) {
@@ -18,10 +18,14 @@ class Items: Identifiable {
         self.itemName = itemName
         self.price = price
     }
+    
 }
 
 struct MainView: View {
     @State var textInput: String = ""
+    @State var balance: Int = 300
+    @State var purchased = [Items]()
+    @State var saved = [Items]()
     
     var clothes_list = [
         Items(imageName: "sweatshirt", itemName: "Sweatshirts", price: 20),
@@ -33,7 +37,7 @@ struct MainView: View {
         Items(imageName: "skateboard", itemName: "skateboard", price: 200)
     ]
     var textbooks_list = [
-        Items(imageName: "textbook", itemName: "Calculus: Early Transcendentals", price: 20),
+        Items(imageName: "textbook1", itemName: "Calculus II", price: 20),
         Items(imageName: "textbook2", itemName: "Introductory Statistics", price: 15),
     ]
     var furniture_list = [
@@ -61,32 +65,148 @@ struct MainView: View {
                 ).padding(.trailing)
             }
             
+            HStack(spacing: 50) {
+                NavigationLink(destination: ProfileView(saved_list: saved, order_history: purchased), label: {
+                    Text("Profile")
+                })
+            }
+            
+            Spacer()
+            
+            Text("Current Balance: $" + String(balance))
+            
+            
             List {
                 Section(header: Text("Clothes")) {
                     ForEach(clothes_list) {i in
-                        CustomCell(imageName: i.imageName, itemName: i.itemName, price: i.price)
+                        HStack {
+                            Image(i.imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 40, height: 40)
+                            Text(i.itemName)
+                            Text("-  $" + String(i.price))
+                            Spacer()
+                            NavigationLink(destination: ContentView(imageName: i.imageName, itemName: i.itemName, price: i.price), label: {
+                                Text("")
+                            })
+                        }
+                        HStack{
+                            Button("BUY", action: {
+                                if (i.price != 0 && i.price <= balance) {
+                                    purchased.append(Items(imageName: i.imageName, itemName: i.itemName, price: i.price))
+                                    i.itemName = "SOLD"
+                                    balance = balance - i.price
+                                    i.price = 0
+                                    i.imageName = "xIcon"
+                                }
+                            })
+                            Spacer()
+                            Button("SAVE", action: {
+                                saved.append(Items(imageName: i.imageName, itemName: i.itemName, price: i.price))
+                            })
+                        }
                     }
                 }
                 
                 Section(header: Text("Furniture")) {
                     ForEach(furniture_list) {i in
-                        CustomCell(imageName: i.imageName, itemName: i.itemName, price: i.price)
+                        HStack {
+                            Image(i.imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 40, height: 40)
+                            Text(i.itemName)
+                            Text("-  $" + String(i.price))
+                            Spacer()
+                            NavigationLink(destination: ContentView(imageName: i.imageName, itemName: i.itemName, price: i.price), label: {
+                                Text("")
+                            })
+                        }
+                        HStack{
+                            Button("BUY", action: {
+                                if (i.price != 0 && i.price <= balance) {
+                                    purchased.append(Items(imageName: i.imageName, itemName: i.itemName, price: i.price))
+                                    i.itemName = "SOLD"
+                                    balance = balance - i.price
+                                    i.price = 0
+                                    i.imageName = "xIcon"
+                                }
+                            })
+                            Spacer()
+                            Button("SAVE", action: {
+                                saved.append(Items(imageName: i.imageName, itemName: i.itemName, price: i.price))
+                            })
+                        }
                     }
                 }
                 
                 Section(header: Text("Transportation Vehicles")) {
                     ForEach(transport_list) {i in
-                        CustomCell(imageName: i.imageName, itemName: i.itemName, price: i.price)
+                        HStack {
+                            Image(i.imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 40, height: 40)
+                            Text(i.itemName)
+                            Text("-  $" + String(i.price))
+                            Spacer()
+                            NavigationLink(destination: ContentView(imageName: i.imageName, itemName: i.itemName, price: i.price), label: {
+                                Text("")
+                            })
+                        }
+                        HStack{
+                            Button("BUY", action: {
+                                if (i.price != 0 && i.price <= balance) {
+                                    purchased.append(Items(imageName: i.imageName, itemName: i.itemName, price: i.price))
+                                    i.itemName = "SOLD"
+                                    balance = balance - i.price
+                                    i.price = 0
+                                    i.imageName = "xIcon"
+                                }
+                            })
+                            Spacer()
+                            Button("SAVE", action: {
+                                saved.append(Items(imageName: i.imageName, itemName: i.itemName, price: i.price))
+                            })
+                        }
                     }
                 }
                 
                 Section(header: Text("Textbooks")) {
                     ForEach(textbooks_list) {i in
-                        CustomCell(imageName: i.imageName, itemName: i.itemName, price: i.price)
+                        HStack {
+                            Image(i.imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 40, height: 40)
+                            Text(i.itemName)
+                            Text("-  $" + String(i.price))
+                            Spacer()
+                            NavigationLink(destination: ContentView(imageName: i.imageName, itemName: i.itemName, price: i.price), label: {
+                                Text("")
+                            })
+                        }
+                        HStack{
+                            Button("BUY", action: {
+                                if (i.price != 0 && i.price <= balance) {
+                                    purchased.append(Items(imageName: i.imageName, itemName: i.itemName, price: i.price))
+                                    i.itemName = "SOLD"
+                                    balance = balance - i.price
+                                    i.price = 0
+                                    i.imageName = "xIcon"
+                                }
+                            })
+                            Spacer()
+                            Button("SAVE", action: {
+                                saved.append(Items(imageName: i.imageName, itemName: i.itemName, price: i.price))
+                            })
+                        }
                     }
                 }
+                }
+            .buttonStyle(BorderlessButtonStyle())
             }
-        }
         .navigationTitle("BearHub")
         }
     }

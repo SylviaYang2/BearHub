@@ -9,14 +9,9 @@ import Foundation
 import SwiftUI
 
 struct ProfileView: View {
-    var saved_list = [
-        Items(imageName: "sweatshirt", itemName: "Sweatshirts", price: 20),
-        Items(imageName: "armchair", itemName: "IKEA Armchair", price: 20),
-    ]
+    var saved_list: [Items]
     
-    var order_history = [
-        Items(imageName: "desk", itemName: "Desk Large", price: 50)
-    ]
+    var order_history: [Items]
     
     var body: some View {
         VStack() {
@@ -43,7 +38,7 @@ struct ProfileView: View {
             VStack(alignment: .leading) {
                 Text("Saved items").bold()
                 ForEach(saved_list) {i in
-                    CustomCell(imageName: i.imageName, itemName: i.itemName, price: i.price)
+                    CustomCell(imageName: i.imageName, itemName: i.itemName, price: i.price, balance: 0)
                 }
             }
             .frame(width: 330, alignment: .leading)
@@ -54,7 +49,7 @@ struct ProfileView: View {
             VStack(alignment: .leading) {
                 Text("Order History").bold()
                 ForEach(order_history) {i in
-                    CustomCell(imageName: i.imageName, itemName: i.itemName, price: i.price)
+                    CustomCell(imageName: i.imageName, itemName: i.itemName, price: i.price, balance: 0)
                 }
             }
             .frame(width: 330, alignment: .leading)

@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    var imageName: String
+    var itemName: String
+    var price: Int
     var body: some View {
         
         VStack(alignment: .leading, spacing: 20) {
             HStack(alignment: .top){
-                Image("armchair2")
+                Image(imageName)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 400, height: 400)
@@ -21,7 +24,7 @@ struct ContentView: View {
             VStack(alignment: .leading, spacing: 5) {
                 
                 HStack {
-                    Text("Item Name")
+                    Text(itemName)
                         .bold().font(.system(size: 40))
                     
                     Spacer()
@@ -29,8 +32,8 @@ struct ContentView: View {
                     LikeButton()
                 }
                 
-                Text("$00.00").font(.system(size: 30))
-                Text("Description of the item. Lorem ipsum dolor sit amet, consectetur adipiscing.")
+                Text("$" + String(price)).font(.system(size: 30))
+                Text("Description of the item.")
             }
             .padding(.leading)
             
@@ -39,7 +42,7 @@ struct ContentView: View {
             
             VStack(alignment: .leading) {
                 HStack {
-                    Image("armchair2")
+                    Image(imageName)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 120, height: 120)
@@ -53,7 +56,7 @@ struct ContentView: View {
                         Text("Seller Name")
                             .bold().font(.system(size: 25))
                         Text("@username")
-                        Text("Biography of the seller. Lorem ipsum dolor sit amet, consectetur adipiscing.")
+                        Text("Biography of the seller.")
                     }
                 }
             }

@@ -9,19 +9,17 @@ import SwiftUI
 
 struct CustomCell: View {
     var imageName: String
-    var itemName: String
-    var price: Int
+    @State var itemName: String
+    @State var price: Int
+    @State var balance: Int
     
     var body: some View {
-        HStack {
-            Image(imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 40, height: 40)
-            
-            Text(itemName).padding(.leading)
-            Spacer()
-            Text(String(price))
-        }
+        Image(imageName)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 40, height: 40)
+        Text(itemName).padding(.leading)
+        Text("-  " + String(price))
+        Spacer()
     }
 }
